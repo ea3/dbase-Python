@@ -7,11 +7,18 @@ db.execute("INSERT INTO contacts VALUES('Brian', 234234, 'brian@mail.com')")
 
 cursor = db.cursor()
 cursor.execute("SELECT * FROM contacts")
-for row in cursor:
-    print(row)
+
+# print(cursor.fetchall()
+
+
+for name, phone, email in cursor:
+    print(name)
+    print(phone)
+    print(email)
+    print("-" * 20)
 
 cursor.close()
-
+db.commit()
 
 db.close()
 
